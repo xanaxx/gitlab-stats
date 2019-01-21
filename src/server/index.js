@@ -9,5 +9,5 @@ app.get('/api/getIssues', (req, res, next) => {
 
 app.listen(PORT, () => {
     console.log('Server listening on po  rt: ', PORT);
-})
+});
 

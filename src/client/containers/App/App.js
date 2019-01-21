@@ -12,12 +12,8 @@ class App extends Component {
             <div className='app_main'>
                 Hello world!
             </div>
-        )
+        );
     }
-
-
 }
 
 export default App;
-
-
