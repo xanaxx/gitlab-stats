@@ -5,4 +5,5 @@ In source direcory we need `config.yml` file to configure our GitLab environment
 ```
 API_TOKEN: <API TOKEN>
 ADDRESS: <GITLAB ADDRESS>
+PORT: <API SERVER PORT>
 ```
