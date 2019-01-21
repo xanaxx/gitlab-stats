@@ -10,10 +10,9 @@
 
 #config files (api secrets)
 config.yml
-server.csr
-server.key
-server.key.org
-server.crt
+*.csr
+*.key
+*.crt
 
 # production
 /build

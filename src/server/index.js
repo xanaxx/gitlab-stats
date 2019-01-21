@@ -16,7 +16,7 @@ const app = express();
 
 app.use('/api/gl', gitlab);
 
-const server = https.createServer(config);
+const server = https.createServer(config, app);
 server.listen(PORT, () => {
-    console.log('Server started,  listening on port: ', PORT);
+    console.log('Server started, listening on port: ', PORT);
 });
