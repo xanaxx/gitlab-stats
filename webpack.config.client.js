@@ -7,6 +7,9 @@ const sourcePath = path.resolve(__dirname, 'src');
 
 module.exports = [{
     entry: [path.join(sourcePath, 'client')],
+    output: {
+        path: path.join(__dirname, 'dist', 'client'),
+    },
     module: {
         rules: [
             {
@@ -27,28 +30,8 @@ module.exports = [{
         new HtmlWebpackPlugin(),
     ],
     devServer: {
+        contentBase: path.join(__dirname, 'dist', 'client'),
+        watchContentBase: true,
         proxy: { "api": "http://localhost:5000/" },
     },
-}, {
-    entry: [path.join(sourcePath, 'server')],
-    output: { filename: 'server/bundle.js' },
-    module: {
-        rules: [
-            {
-                test: /\.js/,
-                use: ['babel-loader']
-            },
-        ],
-    },
-    target: 'node',
-    node: {
-        __dirname: false,
-        __filename: false,
-    },
-    externals: [nodeExternals()],
-    plugins: [
-        new CopyWebpackPlugin([
-            { from: './config.yml', to: './server' },
-        ]),
-    ]
 }]

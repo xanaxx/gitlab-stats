@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className='app_main'>
-                Hellow
+                Hello world!
             </div>
         )
     }
