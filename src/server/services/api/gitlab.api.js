@@ -10,9 +10,7 @@ export function getProjects() {
         },
     }).then(result => {
         return result.data.filter(item => {
-            if (item.visibility === 'public') {
-                return item;
-            }
+            return item.visibility === 'public';
         });
     });
 }

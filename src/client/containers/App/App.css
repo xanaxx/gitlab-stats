@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo');
 * {
     font-family: 'Aleo', serif;
 }
 
-html, body, #root {
+html, body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: #182952;
+    background: linear-gradient(135deg, #b83450, #9f3a6e, #7a457d, #534c7c, #534c7c, #2f4858);
 }
 
 .app_main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: absolute;
-    width: 100%;
+    left: 50%;
+    width: 80%;
     height: 100%;
+    transform: translate(-50%, 0%)
 }

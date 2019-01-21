@@ -1,11 +1,10 @@
 import axios from 'axios';
 
+const host = 'https://localhost';
+const port = 9000;
+
 export function getProjects() {
-    axios({
-        url: `https://localhost:9000/api/gl/getProjects`,
-    }).then(res => {
-        console.log('====================================');
-        console.log(res);
-        console.log('====================================');
+    return axios({
+        url: `${host}:${port}/api/gl/getProjects`,
     });
 }

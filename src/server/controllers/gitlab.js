@@ -1,7 +1,6 @@
 import express from 'express';
 
 import * as GL from '../services/api/gitlab.api';
-import { API_TOKEN, ADDRESS } from '../constans';
 
 const router = express.Router();
 
