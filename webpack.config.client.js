@@ -12,11 +12,11 @@ module.exports = [{
         rules: [
             {
                 test: /\.css$/,
-                use: ['css-loader'],
+                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
             },
             {
                 test: /\.jsx?$/,
-                use: ['babel-loader'],
+                use: [{ loader: 'babel-loader' }],
             },
             {
                 test: /\.(jpe?g|png|gif)$/,
@@ -30,7 +30,7 @@ module.exports = [{
     devServer: {
         contentBase: path.join(__dirname, 'dist', 'client'),
         watchContentBase: true,
-        proxy: { 'api': 'http://localhost:5000/' },
+        proxy: { 'api': 'http://localhost:9000/' },
         stats: 'errors-only',
     },
 }];

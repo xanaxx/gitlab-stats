@@ -27,7 +27,10 @@ module.exports = [{
     externals: [nodeExternals()],
     plugins: [
         new CopyWebpackPlugin([
-            { from: './config.yml', to: './' },
+            { from: './config/config.yml', to: './config/' },
+            { from: './config/ssl/server.csr', to: './config/ssl/server.csr' },
+            { from: './config/ssl/server.key', to: './config/ssl/server.key' },
+            { from: './config/ssl/server.crt', to: './config/ssl/server.crt' },
         ]),
         new WebpackShellPlugin({ onBuildEnd: ['nodemon ./dist/server/index.js'] }),
     ],
