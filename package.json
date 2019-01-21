@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "start": "npm run private:clean &&  npm run start:client | npm run start:server",
+        "start": "npm run private:clean && concurrently -c bgBlue,bgGreen \"npm run start:client\"  \"npm run start:server\"",
         "start:client": "webpack-dev-server --watch --config ./webpack.config.client.js --mode development",
         "start:server": "webpack --watch --config ./webpack.config.server.js --mode development",
         "build:client": "webpack --watch --config ./webpack.config.client.js --mode development",
@@ -12,12 +12,11 @@
         "private:clean": "rimraf dist"
     },
     "dependencies": {
-        "dotenv": "^6.2.0",
-        "express": "^4.16.4",
-        "js-yaml": "^3.12.1",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
-        "react-scripts": "2.1.3"
+        "react-scripts": "2.1.3",
+        "express": "^4.16.4",
+        "js-yaml": "^3.12.1"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -35,6 +34,7 @@
         "@babel/preset-react": "^7.0.0",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.5",
+        "concurrently": "^4.1.0",
         "copy-webpack-plugin": "^4.6.0",
         "css-loader": "^2.1.0",
         "eslint": "^5.12.1",

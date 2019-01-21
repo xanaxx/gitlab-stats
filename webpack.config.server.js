@@ -31,4 +31,5 @@ module.exports = [{
         ]),
         new WebpackShellPlugin({ onBuildEnd: ['nodemon ./dist/server/index.js'] }),
     ],
+    stats: 'errors-only',
 }];

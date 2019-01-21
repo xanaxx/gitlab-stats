@@ -1,7 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
 
 const sourcePath = path.resolve(__dirname, 'src');
 
@@ -32,6 +30,7 @@ module.exports = [{
     devServer: {
         contentBase: path.join(__dirname, 'dist', 'client'),
         watchContentBase: true,
-        proxy: { "api": "http://localhost:5000/" },
+        proxy: { 'api': 'http://localhost:5000/' },
+        stats: 'errors-only',
     },
 }]
