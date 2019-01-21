@@ -20,9 +20,9 @@ module.exports = [{
             },
             {
                 test: /\.(jpe?g|png|gif)$/,
-                use: [{ loader: 'file-loader?name=img/[name]_[hash:base64:5].[ext]' }]
-            }
-        ]
+                use: [{ loader: 'file-loader?name=img/[name]_[hash:base64:5].[ext]' }],
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin(),
@@ -33,4 +33,4 @@ module.exports = [{
         proxy: { 'api': 'http://localhost:5000/' },
         stats: 'errors-only',
     },
-}]
+}];

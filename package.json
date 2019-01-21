@@ -9,7 +9,9 @@
         "build:client": "webpack --watch --config ./webpack.config.client.js --mode development",
         "build:server": "webpack --config ./webpack.config.server.js --mode development",
         "build": "npm run private:clean && webpack --config ./webpack.config.js --mode production",
-        "private:clean": "rimraf dist"
+        "private:clean": "rimraf dist",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix ."
     },
     "dependencies": {
         "react": "^16.7.0",
