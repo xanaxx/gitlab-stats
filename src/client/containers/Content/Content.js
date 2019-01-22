@@ -2,7 +2,7 @@ import './Content.css';
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Router, Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 
 class Content extends Component {
@@ -14,9 +14,9 @@ class Content extends Component {
         return (
             <div className='content_main'>
                 <div>
-                    <Route exact path='/' render={() => (
+                    <Route exact path='/project/:projectId' render={({ match }) => (
                         <div>
-                            a
+                            {match.params.projectId}
                         </div>
                     )} />
                     <Route path='/b' render={() => (

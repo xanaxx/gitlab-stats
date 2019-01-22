@@ -1,5 +1,7 @@
 import './Header.css';
+
 import React, { Component } from 'react';
+
 import HeaderItem from './components/HeaderItem';
 
 class Header extends Component {
@@ -10,7 +12,7 @@ class Header extends Component {
     render() {
         return (
             <div className='main_header'>
-                <HeaderItem label='GitLab Stats' link='/' />
+                <HeaderItem label='GitLab Stats' link='/project/123' />
             </div>
         );
     }

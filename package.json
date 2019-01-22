@@ -14,6 +14,7 @@
         "lint:fix": "eslint --fix ."
     },
     "dependencies": {
+        "antd": "^3.12.4",
         "axios": "^0.18.0",
         "cors": "^2.8.5",
         "express": "^4.16.4",
@@ -40,6 +41,7 @@
         "@babel/preset-react": "^7.0.0",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.5",
+        "base-href-webpack-plugin": "^2.0.0",
         "concurrently": "^4.1.0",
         "copy-webpack-plugin": "^4.6.0",
         "css-loader": "^2.1.0",

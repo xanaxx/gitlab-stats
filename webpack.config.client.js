@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 
 const sourcePath = path.resolve(__dirname, 'src');
 
@@ -26,6 +27,9 @@ module.exports = [{
     },
     plugins: [
         new HtmlWebpackPlugin(),
+        new BaseHrefWebpackPlugin({
+            baseHref: '/',
+        }),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist', 'client'),

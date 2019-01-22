@@ -16,5 +16,7 @@ const instance = axios.create({
 export function getProjects() {
     return instance({
         url: `${host}:${port}/api/gl/getProjects`,
+    }).then(response => {
+        return response.data;
     });
 }

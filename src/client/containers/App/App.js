@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css';
 import './App.css';
 
 import React, { Component } from 'react';
@@ -25,8 +26,8 @@ class App extends Component {
     }
 
     fetchProjects() {
-        getProjects().then(res => {
-            this.setState({ projects: res });
+        getProjects().then(data => {
+            this.setState({ projects: data });
         });
     }
 
@@ -34,7 +35,7 @@ class App extends Component {
         return (
             <div className='app_main'>
                 <Header />
-                <Menu />
+                <Menu projects={this.state.projects} />
                 <Content />
             </div>
         );
