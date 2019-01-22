@@ -32,6 +32,9 @@ module.exports = [{
         historyApiFallback: true,
         watchContentBase: true,
         proxy: { 'api': 'http://localhost:9000/' },
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
         // stats: 'errors-only',
     },
 }];

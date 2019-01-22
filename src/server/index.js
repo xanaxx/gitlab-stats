@@ -2,6 +2,7 @@ import https from 'https';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import cors from 'cors';
 
 import gitlab from './controllers/gitlab';
 
@@ -14,7 +15,13 @@ const config = {
 
 const app = express();
 
+app.use(cors());
+
 app.use('/api/gl', gitlab);
+
+app.get('/api', (req, res) => {
+    res.send('hello world');
+});
 
 const server = https.createServer(config, app);
 server.listen(PORT, () => {

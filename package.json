@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "npm run private:clean && concurrently -c bgBlue,bgGreen \"npm run start:client\"  \"npm run start:server\"",
-        "start:client": "webpack-dev-server --watch --config ./webpack.config.client.js --mode development",
+        "start:client": "webpack-dev-server --https --watch --config ./webpack.config.client.js --mode development",
         "start:server": "webpack --watch --config ./webpack.config.server.js --mode development",
         "build:client": "webpack --watch --config ./webpack.config.client.js --mode development",
         "build:server": "webpack --config ./webpack.config.server.js --mode development",
@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
+        "cors": "^2.8.5",
         "express": "^4.16.4",
         "history": "^4.7.2",
         "js-yaml": "^3.12.1",
