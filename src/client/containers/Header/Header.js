@@ -10,7 +10,7 @@ class Header extends Component {
     render() {
         return (
             <div className='main_header'>
-                <HeaderItem label='test' />
+                <HeaderItem label='GitLab Stats' link='/' />
             </div>
         );
     }

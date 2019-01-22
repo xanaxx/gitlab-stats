@@ -29,8 +29,9 @@ module.exports = [{
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist', 'client'),
+        historyApiFallback: true,
         watchContentBase: true,
         proxy: { 'api': 'http://localhost:9000/' },
-        stats: 'errors-only',
+        // stats: 'errors-only',
     },
 }];

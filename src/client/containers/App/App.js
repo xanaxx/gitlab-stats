@@ -1,9 +1,13 @@
 import './App.css';
 
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import { getProjects } from '../../api/gitlab';
 
 import Header from '../Header/Header';
+import Content from '../Content/Content';
+import Menu from '../Menu/Menu';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +21,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-
+        this.fetchProjects();
     }
 
     fetchProjects() {
@@ -30,6 +34,8 @@ class App extends Component {
         return (
             <div className='app_main'>
                 <Header />
+                <Menu />
+                <Content />
             </div>
         );
     }

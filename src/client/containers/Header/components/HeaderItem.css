@@ -2,3 +2,8 @@
     font-size: 24pt;
     font-weight: bold;
 }
+
+.header_item:hover {
+    cursor: pointer;
+    color: rgb(240, 240, 240);
+}
