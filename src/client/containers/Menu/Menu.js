@@ -10,11 +10,19 @@ const Option = Select.Option;
 class Menu extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            selectedProject: -1,
+        };
         this.onChange = this.onChange.bind(this);
+    }
+
+    componentDidMount() {
+        history.push('/');
     }
 
     onChange(value) {
         history.push(`/project/${value}`);
+        this.setState({ selectedProject: value });
     }
 
     render() {

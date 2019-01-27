@@ -9,6 +9,7 @@ import { getProjects } from '../../api/gitlab';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
 import Menu from '../Menu/Menu';
+import IssueList from '../Content/components/IssueList/IssueList';
 
 class App extends Component {
     constructor(props) {
@@ -17,12 +18,18 @@ class App extends Component {
         document.title = 'GitLab issues stats';
         this.state = {
             projects: [],
+            selectedProject: -1,
         };
         this.fetchProjects = this.fetchProjects.bind(this);
+        this.selectProject = this.selectProject.bind(this);
     }
 
     componentDidMount() {
         this.fetchProjects();
+    }
+
+    selectProject(projectId) {
+        this.setState({ selectedProject: projectId });
     }
 
     fetchProjects() {
@@ -36,7 +43,17 @@ class App extends Component {
             <div className='app_main'>
                 <Header />
                 <Menu projects={this.state.projects} />
-                <Content />
+                <Content>
+                    <Route exact path='/project/:projectId' render={({ match }) => (
+                        <IssueList projectId={match.params.projectId} />
+                    )} />
+                    <Route exact path='/' render={() => (
+                        <div className='content_empty'>
+                            WITAJ!
+                        </div>
+                    )}>
+                    </Route>
+                </Content>
             </div>
         );
     }

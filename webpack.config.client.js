@@ -4,7 +4,7 @@ const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 
 const sourcePath = path.resolve(__dirname, 'src');
 
-module.exports = [{
+module.exports = {
     entry: [path.join(sourcePath, 'client')],
     output: {
         path: path.join(__dirname, 'dist', 'client'),
@@ -41,4 +41,4 @@ module.exports = [{
         },
         // stats: 'errors-only',
     },
-}];
+};

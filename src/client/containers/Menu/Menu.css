@@ -1,11 +1,11 @@
 .menu_main {
-    background-color: #4FFBDF;
-    padding: 5px 10px;
-    height: 40px;
+    background-color: #903749;
+    padding: 0 20px;
+    height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .menu_main_label {

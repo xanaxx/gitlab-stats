@@ -7,8 +7,9 @@ html, body {
     margin: 0;
     width: 100%;
     height: 100%;
-    /*    background: linear-gradient(135deg, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);*/
-    background: linear-gradient(135deg, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A);
+    /* background: linear-gradient(135deg, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871); */
+    background: linear-gradient(135deg, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A) fixed;
+    /* background-image: linear-gradient(to left top, #900c3f, #9b083f, #a5053f, #b0023e, #ba003c, #c40c3b, #cd173a, #d62039, #e12f38, #eb3d37, #f54a35, #ff5733); */
 }
 
 .app_main {
@@ -18,7 +19,24 @@ html, body {
     position: absolute;
     left: 50%;
     width: 80%;
-    height: 100%;
     padding: 0 10px;
     transform: translate(-50%, 0%)
+}
+
+.fade-enter {
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
 }

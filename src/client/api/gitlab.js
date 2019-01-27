@@ -18,5 +18,17 @@ export function getProjects() {
         url: `${host}:${port}/api/gl/getProjects`,
     }).then(response => {
         return response.data;
+    }).catch(err => {
+        throw err;
+    });
+}
+
+export function getOpenIssues(projectId) {
+    return instance({
+        url: `${host}:${port}/api/gl/getIssues/${projectId}/opened`,
+    }).then(response => {
+        return response.data;
+    }).catch(err => {
+        throw err;
     });
 }

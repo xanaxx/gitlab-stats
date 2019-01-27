@@ -13,5 +13,11 @@ router.get('/getProjects', (req, res) => {
     });
 });
 
+router.get('/getIssues/:projectId/opened', (req, res) => {
+    GL.getOpenIssues(req.params.projectId).then(result => {
+        res.send(result);
+    });
+});
+
 
 export default router;
